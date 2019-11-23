@@ -22,13 +22,24 @@ class App extends Component {
                 { title: 'Ex Machina' },
             ]
         }
+        this.handleFilterSubmit = this.handleFilterSubmit.bind(this);
+    }
+
+    handleFilterSubmit(e, searchTerm) {
+        let newMoviesToDisplay = [];
+        this.state.movies.forEach(movie => {
+            if (movie.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+                newMoviesToDisplay.push(movie);
+            }
+        })
+        this.setState({ moviesToDisplay: newMoviesToDisplay });
     }
     render() {
         return (
             <div>
                 <Header />
                 <MovieList movies={this.state.moviesToDisplay} />
-                <Search />
+                <Search handleFilterSubmit={this.handleFilterSubmit} />
 
             </div>
         )

@@ -13,7 +13,10 @@ class Search extends Component {
     }
     render() {
         return (
-            <form>
+            <form onSubmit={(e) => {
+                e.preventDefault();
+                this.props.handleFilterSubmit(e, this.state.searchInput)
+            }}>
                 <input type='text' name="searchInput" onChange={this.handleInputChange} />
                 <input type="submit" />
             </form>
