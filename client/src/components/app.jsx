@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './header.jsx';
 import MovieList from './movieList.jsx';
+import Search from './search.jsx';
 
 class App extends Component {
     constructor(props) {
@@ -26,8 +27,8 @@ class App extends Component {
         return (
             <div>
                 <Header />
-                <MovieList movies={this.state.movies} />
-                {/* <div> Hello World!!!</div > */}
+                <MovieList movies={this.state.moviesToDisplay} />
+                <Search />
 
             </div>
         )
