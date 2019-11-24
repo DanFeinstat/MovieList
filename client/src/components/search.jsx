@@ -15,10 +15,10 @@ class Search extends Component {
         return (
             <form onSubmit={(e) => {
                 e.preventDefault();
-                this.props.handleFilterSubmit(e, this.state.searchInput)
+                this.props.handleFilterSubmit(this.state.searchInput)
             }}>
                 <input type='text' name="searchInput" onChange={this.handleInputChange} />
-                <input type="submit" />
+                <input type="submit" value='Go!' />
             </form>
         )
     }
